@@ -1,0 +1,859 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
+    color:white;
+}
+html {
+    scroll-behavior: smooth; /* This will enable smooth scrolling */
+}
+
+header{
+    background-color: rgba(51, 51, 51, 0.8);
+    position: fixed;
+    width:100%;
+    height:5rem;
+    top:0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:0 20px;
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+header .logo{
+    font-size:2rem;
+    font-weight: bold;
+    color:#f4b41a;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.66);
+
+    width: 50px;
+    text-align: center;
+    padding:5px;
+    border:3px double pink;
+    border-radius: 50%;
+    text-shadow: 0 0 4px #4be0f4eb;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
+}
+
+header .logo:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(244, 180, 26, 0.5);
+}
+nav ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    display:flex;
+}
+nav ul li{
+    margin: 0 15px;
+    position:relative;
+}
+nav ul li a{
+    text-decoration: none;
+    color:white;
+    font-weight:bold;
+    transition: color 0.3s;
+    position:relative;
+    padding: 5px 10px;
+}
+
+nav ul li a::before{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:2px;
+    background-color:#f4b41a;
+    transform:scaleX(0);
+    transition: transform 0.3s;
+}
+
+nav ul li a:hover::before{
+    transform:scaleX(1);
+}
+
+nav ul li a:hover{
+    color:#f4b41a;
+}
+
+.menu-toggle{
+    display:none;
+    cursor:pointer;
+}
+
+.menu-toggle span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+
+
+.intro-section{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #121212 50%, #333 50%);
+    min-height: 93.1vh;
+    padding-top:60px;
+    position:relative;
+    overflow:hidden;
+    transition: background-color 0.3s;  /* checck and change  background-color to background */
+}
+
+/* .intro-section::before{
+    content:" ";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(home.png) no-repeat center center/cover;
+    opacity:0.2;
+    z-index:1;
+} */
+
+.intro{
+    display:flex;
+    align-items: center;
+    text-align: center;
+    gap:143px;
+}
+
+.intro img{
+    width: -webkit-fill-avilable;
+    max-height: 517px;
+    border: 5px solid #f4b41a;
+    border-radius: 50%;
+    margin-left:150px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    filter:drop-shadow(1px 1px 5px rgba(238, 255, 0, 0.892)) /*shadow around the image only */
+}
+
+.intro img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(244, 180, 26, 0.5);
+}
+
+.intro-content{
+    max-width: 600px;
+}
+
+.intro-content h1{
+    font-size: 5rem;
+    margin:0;
+    text-shadow: 2px 2px 4px rgb(211, 206, 206);
+
+}
+
+.intro-content .title{
+    background: #f4b41a;
+    color:black;
+    padding:10px 15px;
+    display:inline-block;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-content p{
+    font-size:1.4rem;
+    margin: 20px 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-buttons{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.cta-buttons a{
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-right:10px;
+    margin-bottom:10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.download-cv{
+    background-color: #f4b41a;
+    color:black;
+    margin-left: 200px; /* while displaying the Hire Me Now button do (margin-left:0px or remove)*/
+ }
+
+ .hire-me{
+    background-color: white;
+    color:black;
+    display: none; /* Hire Me Now button is hidded here | while displaying change above class (.download-cv) and same class (.download-cv) in responsiveness portion*/
+ }
+
+ .cta-buttons a:hover{
+    background-color: #f4b41a;
+    color:black;
+    box-shadow: 2px 2px 8px rgba(244, 180, 26, 0.5);
+ }
+
+ .social-links a{
+    color:white;
+    margin-right: 15px;
+    font-size:1.5rem;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0, 0.5);
+ }
+
+ .social-links a:hover{
+    color:#f4b41a;
+    text-shadow: 1px 1px 2px rgba(244, 280, 26, 0.5);
+ }
+
+ .mode-toggle{
+    cursor:pointer;
+    font-size: 20px;
+    transition: color 0.3s;
+ }
+ .mode-toggle:hover{
+    color:#f4b41a;
+ }
+
+
+
+
+
+
+ /* ......................Skill-start.................... */
+
+.seperator{
+    height:1px;
+    background: yellowgreen;
+}
+
+
+.Skill-Section{
+    background: rgba(0, 0, 0, 0.7);
+    height:100vh;
+    
+}
+
+
+.my-skills{
+    text-align: center;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 4px rgb(211, 206, 206);
+    padding:10px;
+    background: #00000017;
+    width: 100wh;
+
+}
+
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 80px;
+  }
+  
+  .skills-area {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+  }
+  
+  .skill {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .skill-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-bar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    height: 40px;
+    z-index: -1;
+    border-radius: 100px;
+    position: absolute;
+  }
+  
+  .skill-fill {
+    background: linear-gradient(65deg, rgba(255, 153, 0, 0.81), rgb(102, 205, 50));
+    height: 40px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+    overflow: hidden;
+  }
+  
+  .skill-percent {
+    font-size: 30px;
+    display: none;  /* skill percentage is hidden form here to show remove this line ( disaplay: none; ) */
+  }
+
+  .cpp{
+    animation:cpp 2s;
+    width:80%;
+  }
+
+  .dsa{
+    animation: dsa 2s;
+    width: 60%;
+  }
+
+  .c{
+    animation: c 2s;
+    width:70%;
+  }
+  
+  .html {
+    animation: html 2s;
+    width: 90%;
+  }
+  
+  .css {
+    animation: css 2s;
+    width: 65%;
+  }
+  
+  .js {
+    animation: js 2s;
+    width: 50%;
+  }
+  
+    @keyframes cpp{
+        from{
+           width:0;
+        }
+        to{
+            width:80%;
+     }
+  }
+
+
+  @keyframes dsa{
+    from{
+        width:0%;
+    }
+    to{
+        width:60%;
+    }
+  }
+
+  @keyframes c{
+    from{
+        width:0;
+    }
+    to{
+        width:70%;
+    }
+  }
+
+
+  @keyframes html {
+    from {
+      width: 0;
+    }
+    to {
+      width: 90%;
+    }
+  }
+  
+  @keyframes css {
+    from {
+      width: 0;
+    }
+    to {
+      width: 65%;
+    }
+  }
+  
+  @keyframes js {
+    from {
+      width: 0;
+    }
+    to {
+      width: 50%;
+    }
+  }
+
+ /* .........................skill-End........................ */
+
+
+
+ /*.................... Certiifcate-Start.................. */
+
+.certificate-section{
+    background: rgba(0, 0, 0, 0.7);
+    min-height:100vh;
+
+}
+.certificate-card{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+
+.certificate-button{
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+
+.Certificate-cpp{
+    background: rgba(99, 99, 17, 0.497) ;
+    min-width: 200px;
+    min-height: 300px;
+    margin: 20px;
+    box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
+                1px 2px 4px 0px rgba(0,255,255,0.7),
+                2px 4px 8px 0px rgba(0,255,255,0.7),
+                2px 4px 16px 0px rgba(0,255,255,0.7);
+    border-radius: 4px;
+    
+    
+
+}
+
+
+.text-cpp{
+    font-size: 30px;
+    text-align: center;
+    color:#fcb40d;
+    padding-top: 10px;
+
+}
+
+.complete-cpp{
+    text-align: center;
+    color: #f4b31a9e;
+    /* padding-bottom: 10px; */
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img{
+    height: 120px;
+    padding: 20px;
+}
+
+.Certificate-button a{
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-right:10px;
+    margin-bottom:10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Certificate-button a:hover{
+    background-color: #f4b41a;
+    color:black;
+    box-shadow: 2px 2px 8px rgba(244, 180, 26, 0.5);
+    transition: box-shadow 0.3s;
+}
+
+.view-certificate{
+    background-color: #f4b41a;
+    color:black;
+    display: flex;
+    margin-left: 6px;
+}
+
+ /*.................... Certiifcate-End.................. */
+
+
+
+
+
+ /* ..............Contact Us / .social-links start............. */
+.contact-section{
+    background: rgba(0, 0, 0, 0.7);
+    min-height:100vh;
+}
+
+.contact-card{
+    display: flex;
+    /* justify-content: space-evenly; */
+    flex-wrap: wrap;
+    min-width: 100vw;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.contact-info{
+    background: rgba(79, 79, 8, 0.497)  ;
+    min-width: 400px;
+    height:500px;
+    margin-top: 40px;
+    box-shadow: 0px 1px 2px 0px rgba(42, 121, 233, 0.873),
+                1px 2px 4px 0px rgba(42, 121, 233, 0.873),
+                2px 4px 8px 0px rgba(42, 121, 233, 0.873),
+                2px 4px 16px 0px rgba(42, 121, 233, 0.873);
+    border-radius: 4px;
+}
+
+.contact-info-text{
+    font-size: 35px;
+    text-align: center;
+    color:#fcb40d;
+    margin: 30px 20px 10px 20px;
+}
+
+
+
+
+.social-media{
+    background: rgba(79, 79, 8, 0.497) ;
+    min-width:350px;
+    max-width: 90vw;
+    min-height: 100px;
+    max-height:300px;
+    margin-top:40px;
+    margin-bottom: 40px;
+    box-shadow: 0px 1px 2px 0px rgba(42, 121, 233, 0.873),
+                1px 2px 4px 0px rgba(42, 121, 233, 0.873),
+                2px 4px 8px 0px rgba(42, 121, 233, 0.873),
+                2px 4px 16px 0px rgba(42, 121, 233, 0.873);;
+    border-radius: 4px;
+}
+.contact-icon{
+    margin: 20px;
+}
+
+.contact-icon span{
+    margin-left: 15px;
+    margin-bottom: 10px;
+
+}
+
+.social-media-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.social-icons a img{
+    max-height:100px;
+    min-height:50px;
+    margin: 20px;
+    background: white;
+}
+.social-icons a img:hover{
+    height:105px;
+    transition: height 0.4s;
+}
+
+.facebook a img{
+    border-radius: 50%;
+}
+.instagram a img{
+    border-radius: 30%;
+}
+.linkedin a img{
+    border-radius: 12%;
+}
+.github a img{
+    border-radius: 50%;
+}
+
+
+/* ......chart/message start....... */
+
+.form-container{
+    background: rgba(79, 79, 8, 0.497);
+    min-width: 400px;
+    height:500px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0px 1px 2px 0px rgba(42, 121, 233, 0.873),
+                1px 2px 4px 0px rgba(42, 121, 233, 0.873),
+                2px 4px 8px 0px rgba(42, 121, 233, 0.873),
+                2px 4px 16px 0px rgba(42, 121, 233, 0.873);
+    border-radius: 4px;
+
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+
+}
+
+.contact-form-text{
+    font-size: 35px;
+    text-align: center;
+    color:#fcb40d;
+    margin: 30px auto 20px;
+;
+}
+
+.contact-form-text hr{
+    border:none;
+    width:200px;
+    height:3px;
+    background: #a363aa;
+    border-radius: 10px;
+    margin-bottom:10px ;
+}
+
+.contact-form-inputs{
+    width:300px;
+    height:50px;
+    border:none;
+    outline:none;
+    padding-left: 25px;
+    margin: auto;
+    font-weight: 500;
+    font-size: 15px;
+    color:#2c2424f4;
+    border-radius: 50px;
+}
+
+.contact-form textarea{
+    height: 100px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.contact-form-inputs:focus{
+    border:2px solid #ff994f;
+}
+
+.contact-form-inputs::placeholder{
+    color:#a9a9a9;
+}
+
+.contact-form button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    margin: auto;
+    font-size: 16px;
+    color:#fff;
+    gap:10px;
+    border:none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
+    cursor: pointer;
+}
+/* .contact-form button:hover{
+    height:55px;
+    
+} */
+
+.contact-form button img{
+    height:15px;
+}
+
+
+/* ......chart/message End....... */
+
+
+/* ..............Contact Us / .social-links End............. */
+
+
+
+
+
+
+ /* ............Responsiveness start............. */
+
+ @media (max-width:768px){
+    header{
+        height:3.2rem;
+    }
+
+    .title{
+        width:50%;
+    }
+    .intro{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro img{
+        margin-left:0;
+        margin-bottom: 20px;
+    }
+
+    .intro-content{
+        max-width: 90%;
+    }
+
+    .cta-buttons{
+        justify-content: center;
+    }
+
+    .download-cv{
+        margin-left: 0px;  /* while displaying Hire Me Now button remove this entire class */
+    }
+
+
+    .menu-toggle{
+        display: block;
+        z-index: 1001;
+    }
+
+    nav.open ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul{
+        display: none;
+        position: absolute;
+        top:3rem;
+        left:0;
+        width:100%;
+        background-color: white;
+        padding: 20px;
+    }
+
+    nav ul li a{
+        color:black;
+    }
+
+    nav ul li{
+        margin: 10px 0;
+    }
+
+
+
+    .skills-area {
+        padding: 0 5%;
+      }
+
+
+      .social-media{
+        max-height:400px;
+      }
+    
+    
+ }
+ /* ...............Rensponsiveness End................. */
+
+ /* ..............Light and Dark mode start ............................ */
+
+body.light-mode{
+    background-color: white;
+    color:black;
+}
+
+body.light-mode header{
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode header .logo{
+    color:#333;
+    text-shadow: none;
+}
+
+body.light-mode nav ul li a{
+    color:#000000;
+    
+}
+
+body.light-mode nav ul li a:hover{
+    color:#f4b41a;
+    
+}
+
+body.light-mode .menu-toggle span{
+    background-color: #121212;
+}
+
+body.light-mode .intro-section {
+    background: linear-gradient(135deg, #fff 50%, #f2f2f2 50%);
+
+}
+
+body.light-mode .social-links a{
+    color:black;
+    text-shadow: none;
+}
+
+body.light-mode .social-links a:hover{
+    color:#f4b41a;
+    text-shadow: none;
+}
+
+
+
+
+body.light-mode .Skill-Section{
+    background: #fff;
+}
+
+body.light-mode .certificate-section{
+    background: #fff;
+}
+
+body.light-mode .Certificate-cpp{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+body.light-mode .text-cpp{
+    color:black;
+}
+body.light-mode .complete-cpp{
+    color:black;
+}
+
+
+
+body.light-mode .contact-section{
+    background: #fff;
+}
+
+body.light-mode .contact-info ,body.light-mode .social-media{
+    background: #fff;
+
+}
+body.light-mode .contact-info .contact-info-text, body.light-mode .social-media .contact-info-text{
+    color:black
+}
+
+
+body.light-mode .contact-form{
+    background: #fff;
+}
+
+body.light-mode .contact-form .contact-form-text{
+    color:black;
+}
+
+body.light-mode .contact-form-inputs{
+    background: rgba(102, 184, 255, 0.225);
+}
